@@ -16,10 +16,17 @@ const Contact = () => {
   return <h2>Contact Page</h2>;
 };
 
+const NotFound = () => {
+  return <h2>Page Not found.</h2>;
+};
+
 const App = () => {
   return (
     <BrowserRouter>
-      <Route path="/" component={Home} />
+      <Route path="/" component={Home} exact={true} />
+      <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
+      <Route component={NotFound} />
     </BrowserRouter>
   );
 };
